@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SesionService } from './services/sesion.service';
 declare var M; 
 @Component({
   selector: 'app-root',

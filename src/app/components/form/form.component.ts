@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import {Router} from '@angular/router';
+import { SesionService } from 'src/app/services/sesion.service';
 declare var M;
 @Component({
   selector: 'app-form',
@@ -19,7 +20,7 @@ export class FormComponent implements OnInit {
     pass:''
   }
 
-  constructor(private _servicioUsuarios: UsuariosService, private router: Router) { 
+  constructor(private _servicioUsuarios: UsuariosService, private router: Router, private _sesionS:SesionService) { 
     
     this._servicioUsuarios.getUsuarios().then(
       (data) =>{ 
@@ -31,7 +32,7 @@ export class FormComponent implements OnInit {
     this._servicioUsuarios.comprobar(this.usuario).then(
       (pass) => {
         if (pass) {
-          localStorage.setItem('usuario',this.usuario.num);
+          this._sesionS.isLogged();
           this.router.navigate(['/home']);
         }
       }

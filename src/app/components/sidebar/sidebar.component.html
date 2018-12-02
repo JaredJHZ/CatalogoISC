@@ -5,7 +5,10 @@
   <li><a routerLink="home"><i class="material-icons">contacts</i>Maestros</a></li>
   <li><a routerLink="materias"><i class="material-icons">list</i>Materias</a></li>
     <li><div class="divider"></div></li>
+    <li><a>{{nombre}}</a></li>
+    <li><a>{{numero}}</a></li>
+    <li><a>{{carrera}}</a></li>
     <div class="cerrar">
-        <button class="waves-effect waves-light btn bot"><i class="material-icons">close</i> </button>
+        <button (click)="cerrar()" class="waves-effect waves-light btn bot"><i class="material-icons">close</i> </button>
     </div>
 </ul>

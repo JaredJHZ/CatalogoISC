@@ -1,14 +1,21 @@
-<div *ngIf="cargando" class="row cus">
-  <div class="container">
-    <div class="loading">
-        <app-loading ></app-loading>
+<div class="row">
+    <div class="col s12">
+      <input type="text" (keyup)="buscar()" name="text" placeholder="Buscar" [(ngModel)]="busqueda"> 
     </div>
   </div>
-</div>
+
+  <div *ngIf="cargando" class="row cus">
+      <div class="container">
+        <div class="loading">
+            <app-loading ></app-loading>
+        </div>
+      </div>
+    </div>
+
 
 <div *ngIf="!cargando" class="container">
     <div class="row">
-        <div *ngFor="let maestro of maestros" class="col s12 m6 l3 center-align">
+        <div *ngFor="let maestro of maestros" class="col s12 m6 l3 center-align grow">
             <div class="card blue-grey darken-1" style="width:300px;">
                     <div class="card-image">
                         <img src="../../../assets/maestro.png">
