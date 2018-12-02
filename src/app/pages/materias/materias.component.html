@@ -1,3 +1,21 @@
-<p>
-  materias works!
-</p>
+<div *ngIf="cargando" class="row cus">
+    <div class="container">
+      <div class="loading">
+          <app-loading ></app-loading>
+      </div>
+    </div>
+  </div>
+
+<div *ngIf="!cargando" class="container">
+  <div class="row">
+    <div class="col s12">
+      <h5>Materias impartidas en ISC</h5>
+      <div (click)="ir(materia.maestro.id)" *ngFor="let materia of materias" class="materia">
+          <h5>{{materia.materia.nombre}}</h5>
+          <div class="maestro">
+            <h5>{{materia.maestro.apellido_paterno}} {{materia.maestro.nombre}}</h5>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

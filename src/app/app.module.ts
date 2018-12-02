@@ -15,6 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ROUTE } from './router.route';
 import { MateriasComponent } from './pages/materias/materias.component';
 import { MaestroComponent } from './pages/maestro/maestro.component';
+import { LoadingComponent } from './components/loading/loading.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { MaestroComponent } from './pages/maestro/maestro.component';
     LoginComponent,
     HomeComponent,
     MateriasComponent,
-    MaestroComponent
+    MaestroComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

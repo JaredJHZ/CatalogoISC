@@ -2,7 +2,14 @@
     width: 600px;
     margin: 30px auto;
 }
+.loading {
+    display: flex;
+    justify-content: center;
+}
 
+.cus {
+    margin-top: 20%;
+}
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px){
     .custom {
         width: 300px;

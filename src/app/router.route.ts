@@ -19,7 +19,7 @@ const AppRoutes:Routes = [
         {
             component:MaestroComponent,
             path:'maestro/:id'
-        }
+        },
         {
             path:'**',
             redirectTo:'/login',

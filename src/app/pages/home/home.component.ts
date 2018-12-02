@@ -9,10 +9,12 @@ import {Router} from '@angular/router';
 export class HomeComponent implements OnInit {  
 
   maestros:any[];
+  cargando = true;
 
   constructor(private _servicioMaestros:MaestrosService, private router:Router) {
       this._servicioMaestros.getMaestros().then((maestros)=>{
         this.maestros = maestros;
+        this.cargando = false;
       });
    }
 
