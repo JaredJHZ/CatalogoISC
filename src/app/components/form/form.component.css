@@ -1,0 +1,9 @@
+.bot {
+    margin-left: 40%;
+}
+
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px){
+    .bot {
+        margin-left: 35%;
+    }
+}

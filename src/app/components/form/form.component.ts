@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { UsuariosService } from 'src/app/services/usuarios.service';
+import {Router} from '@angular/router';
+declare var M;
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -9,10 +12,36 @@ export class FormComponent implements OnInit {
 
   @Input() titulo: String;
 
-  constructor() { }
+  usuarios: any[] = [];
+
+  usuario = {
+    num: '',
+    pass:''
+  }
+
+  constructor(private _servicioUsuarios: UsuariosService, private router: Router) { 
+    
+    this._servicioUsuarios.getUsuarios().then(
+      (data) =>{ 
+        this.usuarios = data;
+        });
+      }
+
+  private ingresar() {
+    this._servicioUsuarios.comprobar(this.usuario).then(
+      (pass) => {
+        if (pass) {
+          localStorage.setItem('usuario',this.usuario.num);
+          this.router.navigate(['/home']);
+        }
+      }
+    )
+  }
 
   ngOnInit() {
-    console.log(this.titulo);
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+    
   }
 
 }

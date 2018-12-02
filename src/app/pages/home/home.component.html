@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let maestro of maestros" class="col s12 m6 l3 center-align">
+            <div class="card blue-grey darken-1" style="width:300px;">
+                    <div class="card-image">
+                        <img src="../../../assets/maestro.png">
+                      </div>
+                <div class="card-content white-text">
+                  <span class="card-title">{{maestro.nombre}}</span>
+                  <p>{{maestro.apellido_paterno}}</p>
+                </div>
+                <div class="card-action" style="color:white;">
+                  {{maestro.titulo}}
+                </div>
+                <button class="waves-effect waves-light btn" (click)="ir(maestro.id)">Conocer materias que imparte</button>
+              </div>
+        </div>
+      </div>
+</div>
